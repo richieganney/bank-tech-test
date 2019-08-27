@@ -14,6 +14,10 @@ describe BankAccount do
       bank_account.deposit(30)
       expect(bank_account.account_balance).to eq 75
     end
+
+    it 'should throw an error if an invalid input into the method' do
+      expect { bank_account.deposit("65") }.to raise_error "Invalid input. Must input an integer"
+    end
   end
 end
 
