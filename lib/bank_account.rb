@@ -1,12 +1,14 @@
 class BankAccount
 
-  attr_reader :account_balance
-
   def initialize
     @account_balance = []
-  end  
+  end 
+  
+  def account_balance
+    @account_balance.sum
+  end
 
   def deposit(deposit_amount)
-    @account_balance.push(50)
+    @account_balance.push(deposit_amount)
   end
 end
