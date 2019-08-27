@@ -3,6 +3,7 @@
 require 'bank_account'
 
 describe BankAccount do
+
   subject(:bank_account) { described_class.new }
 
   describe '#deposit' do
@@ -51,6 +52,13 @@ describe BankAccount do
       expect(bank_account.full_statement).to include(Time.now.to_s[0..9])
       expect(bank_account.full_statement).to include(10)
       expect(bank_account.full_statement).to include(-10)
+    end
+  end
+
+  describe '#view_statement' do
+    it 'allows a user to see their current statement in a near format' do
+      bank_account.deposit(20)
+      expect { bank_account.view_statement }.to output.to_stdout
     end
   end
 end

@@ -27,6 +27,13 @@ class BankAccount
     @account_balance.push(-withdrawal_amount)
     @full_statement.push(Time.now.to_s[0..9]).push(-withdrawal_amount).push(account_balance)
   end
+
+  def view_statement
+    full_statement = @full_statement.reverse.each_slice(3).to_a.map do |statement_element|
+      statement_element.reverse.join(' || ')
+    end.insert(0, "date || credit || debit || balance")
+    puts full_statement
+  end
 end
 
 binding.pry
