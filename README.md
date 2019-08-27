@@ -1,5 +1,11 @@
 # Bank Tech Test
 
+## Project description
+
+- This is a simple app which you can interact with through the command line.
+- Users can make cash deposits and withdrawals.
+- Users can also see their account statement (date, amount, balance) printed.
+
 ## User stories
 
 As a user,  
@@ -49,4 +55,3 @@ date || credit || debit || balance
 2019-08-27 || || 500.00 || 2500.00  
 13/01/2012 || 2000.00 || || 3000.00  
 10/01/2012 || 1000.00 || || 1000.00
-  
