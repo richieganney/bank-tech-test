@@ -3,7 +3,6 @@
 require 'bank_account'
 
 describe BankAccount do
-
   subject(:bank_account) { described_class.new }
 
   describe '#deposit' do
