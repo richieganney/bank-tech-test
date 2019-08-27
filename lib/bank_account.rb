@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'pry'
 
 class BankAccount
@@ -22,6 +23,7 @@ class BankAccount
 
   def withdraw(withdrawal_amount)
     raise 'Invalid input. Must input an integer' unless withdrawal_amount.is_a? Integer
+
     @account_balance.push(-withdrawal_amount)
     @full_statement.push(Time.now.to_s[0..9]).push(-withdrawal_amount).push(account_balance)
   end
