@@ -16,14 +16,14 @@ class BankAccount
   end
 
   def deposit(deposit_amount)
-    raise 'Invalid input. Must input an integer' unless deposit_amount.is_a? Integer
+    raise 'Invalid input. Must input an integer' if deposit_amount.is_a? String
 
     @account_balance.push(deposit_amount)
     @full_statement.push(Time.now.to_s[0..9]).push(deposit_amount).push(account_balance)
   end
 
   def withdraw(withdrawal_amount)
-    raise 'Invalid input. Must input an integer' unless withdrawal_amount.is_a? Integer
+    raise 'Invalid input. Must input an integer' if withdrawal_amount.is_a? String
 
     @account_balance.push(-withdrawal_amount)
     @full_statement.push(Time.now.to_s[0..9]).push(-withdrawal_amount).push(account_balance)

@@ -5,7 +5,8 @@ require 'bank_account'
 class Statement
   def self.request(statement)
     @statement = statement.reverse.each_slice(3).to_a.map do |statement_element|
-      statement_element[1] < 0 ? statement_element[1] = "|| #{-statement_element[1]}" : statement_element[1] = "#{statement_element[1]} ||"
+      statement_element[1] < 0 ? statement_element[1] = "|| #{'%.2f' % -statement_element[1]}" : statement_element[1] = "#{'%.2f' % statement_element[1]} ||"
+      statement_element[0] < 0 ? statement_element[0] = "|| #{'%.2f' % -statement_element[0]}" : statement_element[0] = "#{'%.2f' % statement_element[0]} ||"
       statement_element.reverse.join(' || ')
     end.insert(0, 'date || credit || debit || balance')
   end

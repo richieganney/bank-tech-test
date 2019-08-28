@@ -17,8 +17,12 @@ describe BankAccount do
       expect(bank_account.account_balance).to eq 75
     end
 
-    it 'should throw an error if an invalid input into the method' do
+    it 'should throw an error if a string is inputed' do
       expect { bank_account.deposit('65') }.to raise_error 'Invalid input. Must input an integer'
+    end
+
+    it 'should NOT throw an error if a float is inputed' do
+      expect { bank_account.deposit(50.70) }.not_to raise_error
     end
 
     it 'every deposit should include a date log and the current balance in the full statement' do
@@ -35,8 +39,12 @@ describe BankAccount do
       expect(bank_account.account_balance).to eq 0
     end
 
-    it 'should throw an error if an invalid input into the method' do
+    it 'should throw an error if a string is inputed' do
       expect { bank_account.withdraw('65') }.to raise_error 'Invalid input. Must input an integer'
+    end
+
+    it 'should NOT throw an error if a float is inputed' do
+      expect { bank_account.withdraw(50.70) }.not_to raise_error
     end
 
     it 'allows the user to withdraw different amounts from their bank account' do
