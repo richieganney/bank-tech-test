@@ -27,7 +27,7 @@ describe BankAccount do
 
     it 'every deposit should include a date log and the current balance in the full statement' do
       bank_account.deposit(20)
-      expect(bank_account.full_statement).to include(Time.now.strftime("%d/%m/%Y"))
+      expect(bank_account.full_statement).to include(Time.now.strftime('%d/%m/%Y'))
       expect(bank_account.full_statement).to include(20)
     end
   end
@@ -56,7 +56,7 @@ describe BankAccount do
     it 'every withdrawal should include a date log and the current balance in the full statement' do
       bank_account.deposit(20)
       bank_account.withdraw(10)
-      expect(bank_account.full_statement).to include(Time.now.strftime("%d/%m/%Y"))
+      expect(bank_account.full_statement).to include(Time.now.strftime('%d/%m/%Y'))
       expect(bank_account.full_statement).to include(10)
       expect(bank_account.full_statement).to include(-10)
     end
