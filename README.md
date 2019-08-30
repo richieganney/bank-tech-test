@@ -22,9 +22,9 @@ I want to be able to see an account statement whenever I want ✅
 
 ## Solution
 
-I decided to model my solution into a single class because it allowed for a
+I decided to model my solution into a two classes because it allowed for a
 simple but effective foundation from which I could launch the development
-cycle.
+cycle. Each class has a clear responsibility
 
 ## Gems
 
